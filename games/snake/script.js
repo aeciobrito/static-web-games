@@ -2,6 +2,8 @@ const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const gameSpeed = 200;
+const controls = document.querySelectorAll(".controls i");
+
 let foodX, foodY;
 let snakeX = 15, snakeY = 15;
 let directionX = 0, directionY = 0;
@@ -50,8 +52,13 @@ const hadleGameOver = () => {
   location.reload();
 }
 
+controls.forEach(button => 
+  button.addEventListener("click", () => changeDirection({ 
+    key: button.dataset.key 
+  })));
+
 const initGame = () => {
-  if(gameOver) return hadleGameOver();
+  if (gameOver) return hadleGameOver();
   let htmlMarkup = `
     <div class="food" 
       style="grid-area: ${foodY} / ${foodX}">
@@ -67,7 +74,7 @@ const initGame = () => {
     changeFoodPoition();
     snakeBody.push([foodX, foodY]);
 
-    scoreElement.innerText = `Score: ${score}`;    
+    scoreElement.innerText = `Score: ${score}`;
   }
 
   for (let i = snakeBody.length - 1; i > 0; i--) {
@@ -80,10 +87,10 @@ const initGame = () => {
   snakeY += directionY;
 
   if (wallHit) {
-    if(snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
-      highScore = score >= highScore? score : highScore;
+    if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
+      highScore = score >= highScore ? score : highScore;
       localStorage.setItem("high-score", highScore);
-      gameOver = true;      
+      gameOver = true;
     }
   } else {
     if (snakeX <= 0) {
@@ -105,7 +112,7 @@ const initGame = () => {
       `<div class="head" 
       style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]}">
     </div>`;
-    if(i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
+    if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
       gameOver = true;
     }
   }
