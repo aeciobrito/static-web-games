@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="game-details">
-            <span class="score">Score: 0</span>
-            <span class="high-score">High Score: 30</span>
+    <div class="game-container">
+        <div class="game-info">
+            <span id="current-score">Score: 0</span>
+            <span id="high-score">High Score: 30</span>
         </div>
-        <div class="play-board"></div>
-        <div class="controls">
-            <i data-key="ArrowLeft" >&#8592</i>
-            <i data-key="ArrowUp" >&#8593</i>
-            <i data-key="ArrowRight" >&#8594</i>
-            <i data-key="ArrowDown" >&#8595</i>
+        <div id="game-board" class="game-board"></div>
+        <div class="game-controls">
+            <button data-key="ArrowLeft" aria-label="Move Left">&#8592;</button>
+            <button data-key="ArrowUp" aria-label="Move Up">&#8593;</button>
+            <button data-key="ArrowRight" aria-label="Move Right">&#8594;</button>
+            <button data-key="ArrowDown" aria-label="Move Down">&#8595;</button>
         </div>
     </div>
 </body>

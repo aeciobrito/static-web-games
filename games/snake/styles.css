@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
 }
 
 body {
@@ -10,58 +10,59 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: rgba(130, 140, 180, 1);
+    background-color: #828CB4;
 }
 
-.wrapper {
+.game-container {
     width: 65vmin;
-    height: 70vmin;
-    border-radius: 4px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    background: rgba(80, 80, 120, 1);
+    border-radius: 4px;
+    background-color: #505078;
     box-shadow: 10px 10px 12px rgba(40, 40, 90, 0.7);
 }
 
-.game-details {
-    color: rgba(190, 190, 220, 1);
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    color: #BEBEDC;
     font-size: 1.2rem;
     font-weight: 500;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
 }
 
-.play-board {
-    width: 100%;
-    height: 100%;
-    background: rgba(50, 50, 80, 1);
+.game-board {
     display: grid;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    width: 100%;
+    aspect-ratio: 1; /* Maintain square proportions */
+    background-color: #323250;
 }
 
-.play-board .food {
-    background: rgba(220, 50, 90, 1.0);
+.food {
+    background-color: #DC325A;
     border-radius: 2px;
 }
 
-.play-board .head {
-    background: rgba(80, 180, 90, 1.0);
+.snake {
+    background-color: #50B45A;
     border-radius: 2px;
 }
 
-.controls {
+.game-controls {
     display: flex;
     justify-content: space-between;
 }
 
-.controls i {
+.game-controls button {
     padding: 25px 0;
     text-align: center;
     font-size: 1.3rem;
     color: #B8C6DC;
-    width: calc(100% / 4);
+    background: none;
+    border: none;
     cursor: pointer;
+    flex: 1;
     border-right: 1px solid #171B26;
 }
