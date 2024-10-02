@@ -14,7 +14,7 @@ body {
 }
 
 .game-container {
-    width: 65vmin;
+    width: 80vmin;
     height: auto;
     display: flex;
     flex-direction: column;
