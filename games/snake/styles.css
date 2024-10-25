@@ -10,16 +10,16 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #828CB4;
+    background-color: rgba(50, 90, 50, 1);
 }
 
 .game-container {
-    width: 80vmin;
+    width: 50vmin;
     height: auto;
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-    background-color: #505078;
+    background-color: rgba(70, 100, 90, 1);
     box-shadow: 10px 10px 12px rgba(40, 40, 90, 0.7);
 }
 
@@ -27,7 +27,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 15px 30px;
-    color: #BEBEDC;
+    color: rgb(240, 255, 255);
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -36,7 +36,7 @@ body {
     display: grid;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
     width: 100%;
-    aspect-ratio: 1; /* Maintain square proportions */
+    aspect-ratio: 1;
     background-color: #323250;
 }
 
@@ -51,18 +51,32 @@ body {
 }
 
 .game-controls {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px; 
+    width: 40vmin; 
+    height: 40vmin; 
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
 }
 
 .game-controls button {
-    padding: 25px 0;
-    text-align: center;
-    font-size: 1.3rem;
-    color: #B8C6DC;
-    background: none;
-    border: none;
+    width: 12vmin; 
+    height: 12vmin;
+    font-size: 2rem;
+    color: rgb(240, 255, 255);
+    background-color: #171B26;
+    border: 2px solid #171B26;
+    border-radius: 50%; 
     cursor: pointer;
-    flex: 1;
-    border-right: 1px solid #171B26;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.game-controls button:hover {
+    background-color: rgba(240, 255, 255, 0.2);
 }
